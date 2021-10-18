@@ -1,0 +1,114 @@
+/*============================================
+     CUSTOM STYLESHEET, MIXINS & RESETS
+============================================*/
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap');
+* { 
+  margin: 0; 
+  padding: 0;  
+  text-rendering: optimizeLegibility; 
+  @include font-smoothing(antialiased);
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+/*=================================
+        COLORS & FONTS
+=================================*/
+$bgcolor: #F7F6F8 !important;
+$white: #ffffff !important;
+$black: #484848 !important;
+$grey: #656565;
+$lgrey: #CDD2DC;
+$mgrey: #ccc;
+$green: #5AE9A6 !important;
+$dgreen: #66CFAF;
+$lpurple: #9E66CF;
+$purple: #201430 !important;
+$pink: #FF2770 !important;
+$baseFont: 16px;
+$worksans: 'Work Sans', sans-serif !important;
+$montserrat: 'Montserrat', sans-serif !important;
+$bold: 600 !important;
+$bolder: 700 !important;
+$light: 300;
+$medium: 400;
+
+
+/*=================================
+        TABLE COLORS
+=================================*/
+$thcolor: #DEDEDE !important;
+
+
+/*================================
+         MAIN STYLES
+================================*/
+html, body {
+    height: 100%;
+}
+
+body {
+  font: $baseFont $worksans;
+  background-color: $purple;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none !important;
+}
+
+a img {
+  text-decoration: none;
+  border: 0px;
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; 
+}
+
+section, header, footer {
+  float: left;
+  width: 100%; 
+}
+
+h1 {
+  $size: (28px / $baseFont) + 0em;
+  @include responsive-font-size (1em, $size, 640px, 1200px, 0.1em);
+  font-family: $montserrat;
+  font-weight: $bolder;
+}
+
+input, select {
+  border: solid 1px $lgrey;
+  padding: 10px;
+  @include border-radius(10px);
+}
+
+.db-sidebar {
+	background-color: $purple;
+}
+
+.db-content {
+	background-color: $bgcolor;
+	height: 100vh;
+}
+
+.logo-side-wrap {
+	img {
+		max-width: 230px;
+	}
+}
+
+select, input::-webkit-input-placeholder {
+	font-family: $worksans;
+	font-weight: $light;
+	color: $mgrey;
+}
+
